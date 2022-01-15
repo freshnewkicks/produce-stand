@@ -18,7 +18,7 @@ const showRouter = require('./routes/show.js');
 const editRouter = require('./routes/edit.js');
 const createRouter = require('./routes/create.js');
 
-mongoose.connect('mongodb+srv://admin:fernis12@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:pw@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
     .then(() => {
       console.log('Mongo connection open');
     })

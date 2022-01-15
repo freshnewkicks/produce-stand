@@ -13,10 +13,13 @@ router.get('/:id', async (req,res) => {
 
 router.put('/:id', async (req,res) => {
     const { id } = req.params;
+    const product = await Product.findByIdAndUpdate(id, req.body, {runValidators: true, new: true });
     console.log(req.body);
-    console.log(id);
-    res.send('Successful put');
+    res.redirect(`/products/${product._id}`);
+
 });
+
+
 
 
 
