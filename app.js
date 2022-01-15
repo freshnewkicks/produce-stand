@@ -5,13 +5,20 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
+// global middleware
+// 1. body-parser to parse request body
+// 2. override HTTP methods
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
+
+// routing middleware
 const indexRouter = require('./routes/index.js');
 const productRouter = require('./routes/products.js');
 const showRouter = require('./routes/show.js');
 const editRouter = require('./routes/edit.js');
 const createRouter = require('./routes/create.js');
 
-mongoose.connect('mongodb+srv://admin:pw@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:fernis12@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
     .then(() => {
       console.log('Mongo connection open');
     })
@@ -21,16 +28,16 @@ mongoose.connect('mongodb+srv://admin:pw@cluster0.afktq.mongodb.net/produceStand
 
 // routers
 app.use('/', indexRouter);
+
 app.use('/products', productRouter);
 app.use('/products', showRouter)
 app.use('/products', createRouter);
+app.use('/products', editRouter);
+
 app.use('/edit', editRouter);
 app.use('/new', createRouter);
 
-// 1. body-parser to parse request body
-// 2. override HTTP methods
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(methodOverride());
+
 
 // 1. set view path, __dirname references current directory
 // 2. set view engine to ejs

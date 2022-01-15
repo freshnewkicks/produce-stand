@@ -10,9 +10,18 @@
 <body>
 <h1>Edit Details</h1>
 <p>Editing "<%= product.name %>"</p>
-<form action="/products/<%= product.id %>" method="POST">
+<form action="/products/<%= product.id %>?_method=PUT" method="POST">
     <label for="productName">Product Name:</label>
     <input type="text" name="productName" id="product_name" value="<%= product.name %>">
+    <label for="productPrice">Product Price:</label>
+    <input type="text" name="productPrice" id="product_price" value="<%= product.price %>">
+    <label for="category">Category:</label>
+    <select name="category" id="category">
+        <option value="<%= product.category %>"><%= product.category %></option>
+        <option value="fruit">fruit</option>
+        <option value="vegetable">vegetable</option>
+        <option value="dairy">dairy</option>
+    </select>
     <button type="submit">Submit</button>
 </form>
 </body>
