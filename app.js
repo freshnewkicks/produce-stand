@@ -21,7 +21,9 @@ mongoose.connect('mongodb+srv://admin:fernis12@cluster0.afktq.mongodb.net/produc
 
 app.use('/', indexRouter);
 app.use('/products', productRouter);
-app.use('/products', showRouter);
+app.use('/products', showRouter)
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride());
 
