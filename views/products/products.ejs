@@ -9,7 +9,8 @@
   <p><a href="/">Back</a></p>
   <ul>
     <% for(let product of products) { %>
-      <li> <%= product.name %> <a href="/edit">Edit</a> <a href="/products/<%= product.id %>">View</a></li>
+      <li> <%= product.name %> <a href="/edit/<%= product.id %>">Edit</a> <a href="/products/<%= product.id
+        %>">View</a></li>
     <% } %>
   </ul>
   </body>
