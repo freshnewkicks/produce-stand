@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Product = require('./products');
 
 //seed  the db with some info
-mongoose.connect('mongodb+srv://admin:fernis12@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:pw@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
     .then(() => {
         console.log('Mongo connection open');
     })

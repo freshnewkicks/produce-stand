@@ -10,9 +10,9 @@
 <body>
 <h1>Edit Details</h1>
 <p>Editing "<%= product.name %>"</p>
-<form action="/products/<%= product.id %>" method="PATCH">
+<form action="/products/<%= product.id %>" method="POST">
     <label for="productName">Product Name:</label>
-    <input type="text" name="productName" id="product_name">
+    <input type="text" name="productName" id="product_name" value="<%= product.name %>">
     <button type="submit">Submit</button>
 </form>
 </body>
