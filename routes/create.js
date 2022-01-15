@@ -4,6 +4,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 
 router.use(bodyParser.urlencoded({extended: true}));
+const categories = ['fruit', 'vegetables', 'dairy', 'other'];
 
 
 // get create page
@@ -11,7 +12,7 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', async (req,res) => {
     const { id } = req.params;
     const product = await Product.findById(id);
-    res.render('products/create', { product });
+    res.render('products/create', { product, categories });
 });
 
 

@@ -11,6 +11,7 @@ const methodOverride = require('method-override');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
+
 // routing middleware
 const indexRouter = require('./routes/index.js');
 const productRouter = require('./routes/products.js');
@@ -18,7 +19,7 @@ const showRouter = require('./routes/show.js');
 const editRouter = require('./routes/edit.js');
 const createRouter = require('./routes/create.js');
 
-mongoose.connect('mongodb+srv://admin:pw@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:fernis12@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
     .then(() => {
       console.log('Mongo connection open');
     })
