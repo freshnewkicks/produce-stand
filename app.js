@@ -18,8 +18,9 @@ const productRouter = require('./routes/products.js');
 const showRouter = require('./routes/show.js');
 const editRouter = require('./routes/edit.js');
 const createRouter = require('./routes/create.js');
+const deleteRouter = require('./routes/delete.js');
 
-mongoose.connect('mongodb+srv://admin:fernis12@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:pw@cluster0.afktq.mongodb.net/produceStand?retryWrites=true&w=majority')
     .then(() => {
       console.log('Mongo connection open');
     })
@@ -34,10 +35,12 @@ app.use('/products', productRouter);
 app.use('/products', showRouter)
 app.use('/products', createRouter);
 app.use('/products', editRouter);
+app.use('/products', deleteRouter);
 
 app.use('/edit', editRouter);
 app.use('/new', createRouter);
 
+app.use('/delete', deleteRouter);
 
 
 // 1. set view path, __dirname references current directory

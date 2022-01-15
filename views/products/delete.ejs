@@ -5,13 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Produce Stand CRUD</title>
+    <title>Product Stand CRUD</title>
 </head>
 <body>
-<h1>Product:</h1>
-<a href="/products">Back</a> <br>
-<%= product.id %> <br>
-<%= product.name %> <br>
-Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a>
+<h1>Delete Product</h1>
+<form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+    <p>*<h5>This can not be undone</h5>*</p>
+</form>
 </body>
 </html>
